@@ -1,5 +1,6 @@
 copyright: 2023
 author: bge
+title: regression
 logo: https://github.com/abikesa/abikesa.github.io/blob/main/png/hub_and_spoke.jpg?raw=true
 
 # Force re-execution of notebooks on each build.
