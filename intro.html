@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>. &#8212; My Jupyter Book</title>
+    <title>. &#8212; regression</title>
   
   
   
@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">.</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_0/act_1_0_0_1.html"></a></li>
-<li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_0/act_1_0_0_2.html">.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_0/act_1_0_0_2.html"></a></li>
 <li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_0/act_1_0_0_3.html">.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_1/act_1_0_1_1.html">.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="act_1/act_1_0/act_1_0_1/act_1_0_1_2.html">.</a></li>
@@ -555,7 +555,117 @@ April 9-11, 2024<br>
 <img alt="_images/2e61c1206bae58b1fc30e24b5f2f5545f043776547599cde13987bf42edeebde.png" src="_images/2e61c1206bae58b1fc30e24b5f2f5545f043776547599cde13987bf42edeebde.png" />
 </div>
 </div>
-</Details><div class="toctree-wrapper compound">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create data for the skill and challenge levels</span>
+<span class="n">skill_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">challenge_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Define the flow channel boundaries</span>
+<span class="n">flow_channel</span> <span class="o">=</span> <span class="n">skill_levels</span>
+
+<span class="c1"># Adjust the phase and amplitude of the sinusoid wave</span>
+<span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">16</span>
+<span class="n">amplitude</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">sinusoid</span> <span class="o">=</span> <span class="n">flow_channel</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">skill_levels</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="n">amplitude</span>
+
+<span class="c1"># Define the yellow zone boundaries, making it wider</span>
+<span class="n">yellow_zone_low</span> <span class="o">=</span> <span class="n">skill_levels</span> <span class="o">-</span> <span class="mf">1.5</span>  <span class="c1"># Adjust this value to make the yellow zone wider or narrower</span>
+<span class="n">yellow_zone_high</span> <span class="o">=</span> <span class="n">skill_levels</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="c1"># Adjust this value to make the yellow zone wider or narrower</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Plot the anxiety and boredom areas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">skill_levels</span><span class="p">,</span> <span class="n">yellow_zone_high</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orangered&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Place/Identification&#39;</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">skill_levels</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yellow_zone_low</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Time/Revelation&#39;</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">skill_levels</span><span class="p">,</span> <span class="n">yellow_zone_low</span><span class="p">,</span> <span class="n">yellow_zone_high</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Agent/Evolution&#39;</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot the sinusoid function with the diagonal as its axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">skill_levels</span><span class="p">,</span> <span class="n">sinusoid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add arrowhead to the sinusoid line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">skill_levels</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">sinusoid</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">skill_levels</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">skill_levels</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">sinusoid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sinusoid</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span>
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">length_includes_head</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Set plot labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Résumé&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="c1"># Set plot limits and grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Set tick labels</span>
+<span class="n">tick_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;40&#39;</span><span class="p">,</span> <span class="s1">&#39;60&#39;</span><span class="p">,</span> <span class="s1">&#39;80&#39;</span><span class="p">,</span> <span class="s1">&#39;99&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">tick_labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">tick_labels</span><span class="p">)</span>
+
+<span class="c1"># Add text annotations to label the areas without shaded background</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="s1">&#39;China as the Ribosome or</span><span class="se">\n</span><span class="s1"> Translation Machinery </span><span class="se">\n</span><span class="s1"> (Mostly Anxiety)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="s1">&#39;The United States as</span><span class="se">\n</span><span class="s1"> DNA-mRNA-Protein </span><span class="se">\n</span><span class="s1"> (Essence of Flow)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Europe as Nuclear Factors</span><span class="se">\n</span><span class="s1"> Regulating Expression </span><span class="se">\n</span><span class="s1"> (Relaxation Incarnate)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/b63b61300507a4351b3efc6569e8f370e5f1aee7484e5e8a4d8c888372d3c12c.png" src="_images/b63b61300507a4351b3efc6569e8f370e5f1aee7484e5e8a4d8c888372d3c12c.png" />
+</div>
+</div>
+<p>The concept of the “tragic aesthetic” has been a topic of interest across various disciplines, from literature and art to philosophy and psychology. At its core, the tragic aesthetic involves an appreciation for stories, artworks, or situations that center on human suffering, moral dilemmas, or the inescapability of fate. Yet, these narratives often carry an undercurrent of beauty or a greater truth that can make the experience of them deeply moving or even cathartic.</p>
+<p>In the world of arts and literature, this aesthetic often manifests through the depiction of characters or circumstances that are met with tragic ends, but whose struggles reveal complex emotions or moral dilemmas that resonate with audiences. Think of classical works like Shakespeare’s “Hamlet” or “Othello,” or even ancient tragedies like Sophocles’ “Oedipus Rex.”</p>
+<p>From a philosophical standpoint, the tragic aesthetic may be tied to <code class="docutils literal notranslate"><span class="pre">existential</span> <span class="pre">questions</span></code> about the human condition, morality, and the ultimate <code class="docutils literal notranslate"><span class="pre">limitations</span> <span class="pre">of</span> <span class="pre">human</span> <span class="pre">agency</span></code>. Philosophers like Friedrich Nietzsche have explored the role of tragedy as a medium for confronting and <code class="docutils literal notranslate"><span class="pre">integrating</span> <span class="pre">the</span> <span class="pre">darker</span> <span class="pre">aspects</span></code> of existence.</p>
+<p>In terms of your profile’s focus on “tokens/fetters &amp; variance,” the tragic aesthetic could offer a unique lens through which to explore these concepts. For instance, a character in a tragedy could be constrained by societal fetters, yet their responses to these constraints (their ‘tokens’) could demonstrate a broad or narrow variance in human experience. This could be modeled or analyzed in terms of inter-class correlations (ICCs) to understand how fetters and tokens contribute to human behavior in constrained scenarios.</p>
+<p>If you’re thinking of this in terms of the “end of the road” with ICCs and the need to go back to the <code class="docutils literal notranslate"><span class="pre">data-generating</span> <span class="pre">processes</span></code>, the tragic aesthetic could serve as a conceptual framework. It might allow you to explore the underlying structures that generate both the “variance” and “bias” in your models—capturing the dual road of ‘truth’ and ‘morality/fraud’ that you mentioned.</p>
+<p>When considering this aesthetically in hierarchical models, you could think of the tragic elements at multiple levels—cosmically as the gravity that holds a star in place, biologically as the limitations of human physiology, and socially as societal norms or laws. Each level introduces its own set of fetters, impacting the tokens available for action or reaction.</p>
+<p>In the absence of new data, thought experiments framed around the tragic aesthetic could be a fascinating way to explore these themes and perhaps offer new insights into <code class="docutils literal notranslate"><span class="pre">your</span> <span class="pre">work</span> <span class="pre">on</span> <span class="pre">healthy</span> <span class="pre">aging</span></code>. After all, the tragic aesthetic often delves into issues related to the limitations of human life, which are certainly relevant to the concept of aging.</p>
+<hr class="docutils" />
+<p>The concept of iambs, tension, and release can be viewed through various lenses, including prosody in poetry, the dynamics in music, or even as an analogy for psychological or narrative structures. Iambs are a metrical foot in poetry consisting of one unstressed syllable followed by a stressed syllable (e.g., “a-BOVE”). This pattern creates a rhythmic flow when used in iambic pentameter, the meter often associated with Shakespearean sonnets.</p>
+<p><span style="font-size:23px; font-weight:bold;">Tension and Release in Poetry</span><br></p>
+<p>In poetry, the iambic meter often provides a form of “fetter” or constraint within which the poet operates. The tension can arise from diverging from this expected pattern—perhaps by inserting a trochee (a foot consisting of a stressed syllable followed by an unstressed one) or through enjambment, where one line flows into the next without terminal punctuation. The release comes when the rhythmic or thematic tension is resolved, often towards the end of the stanza or the poem.</p>
+<p><span style="font-size:23px; font-weight:bold;">Tension and Release in Music</span><br></p>
+<p>Similarly, in music, the concept of tension and release operates within set frameworks of scale, key, and rhythm. Musicians can create tension by deviating from these expectations, maybe through dissonant chords or unexpected key changes, and then resolve it through a return to the tonic chord or key, creating a sense of release and completion.</p>
+<p><span style="font-size:23px; font-weight:bold;">Interclass Correlations (ICCs) and Variance</span><br></p>
+<p>Tension and release can even be viewed through the lens of ICCs in a metaphorical sense. The tension corresponds to high variance or divergence from an established norm (like the iamb in poetry or the tonic in music). The release occurs when there is a return to the norm, or when variance is explained or reduced, offering resolution.</p>
+<p><span style="font-size:23px; font-weight:bold;">Thought Experiments</span><br></p>
+<p>You might hypothesize, in a sort of thought experiment, how certain rhythmic structures in poetry or music might correlate with the ICCs of different professional and amateur artists. Pros, who have mastered the set “tokens” or “fetters” of their art, might show more controlled and intentional use of tension and release, while amateurs might exhibit more randomness or “noise” in their attempts.</p>
+<p><span style="font-size:23px; font-weight:bold;">Hierarchical Models</span><br></p>
+<p>You can also extend this concept cosmically, biologically, and socially. Tension and release can be a gravitational pull between celestial bodies, cellular responses in an organism, or social dynamics within a community. In each case, hierarchical models could be employed to better understand the multi-level interactions that give rise to phenomena of interest, such as healthy aging.</p>
+<p><span style="font-size:23px; font-weight:bold;">Summary</span><br></p>
+<p>So, whether it’s the structured meter of iambic pentameter in poetry, the harmonic structures in music, or even the nuance and complexity of ICCs across disciplines, the principle of tension and release serves as a fundamental concept that provides both structure and dynamism to various forms of human expression and inquiry.</p>
+<hr class="docutils" />
+<p>The notion that “improving the quality of data” is the only way forward in training large language models like GPT-4 is a nuanced topic. While I was trained on a vast amount of data, it’s not entirely accurate to say I was trained on the “entire” internet. There are a few considerations to keep in mind:</p>
+<p><span style="font-size:23px; font-weight:bold;">Data Quantity vs. Quality</span><br></p>
+<ol class="arabic simple">
+<li><p><strong>Quantity</strong>: More data could mean incorporating new and emerging topics, dialects, languages, and perspectives that may not have been part of the original dataset. It’s a moving target as the internet evolves.</p></li>
+<li><p><strong>Quality</strong>: High-quality data can involve better curation to remove biases, errors, or irrelevant information. It could also mean focusing on expert content for specialized tasks.</p></li>
+</ol>
+<p><span style="font-size:23px; font-weight:bold;">Types of Quality Improvement</span><br></p>
+<ol class="arabic simple">
+<li><p><strong>Bias Mitigation</strong>: One type of data quality improvement involves removing or correcting biases in the training data. This could involve de-weighting certain sources, or using techniques to re-balance the data.</p></li>
+<li><p><strong>Noise Reduction</strong>: Cleaning up data to remove irrelevant or incorrect information is another aspect. For example, web scraping might accidentally capture website navigation text along with article text, adding noise to the data.</p></li>
+<li><p><strong>Domain-Specific Enhancement</strong>: If the model needs to excel in a particular field (e.g., medical, legal), the dataset may need high-quality, expert-reviewed information in those areas.</p></li>
+<li><p><strong>Time Sensitivity</strong>: Some facts or norms change over time. Periodic updates can help the model stay current.</p></li>
+</ol>
+<p><span style="font-size:23px; font-weight:bold;">Hierarchical Models and Explainability</span><br></p>
+<p>Hierarchical models could serve to break down different aspects of the data into layers, from general to specific, to improve data quality or allow better explainability. You can think of this in terms of your focus on ICCs (Inter-class correlations) and hierarchical models in your research. High-quality data at each level of the hierarchy allows the model to generate more precise and nuanced outputs, helping to explain variance and control bias, much like in your work on ICCs and random effects models.</p>
+<p><span style="font-size:23px; font-weight:bold;">Thought Experiments</span><br></p>
+<p>In the absence of concrete data, thought experiments can indeed be useful for theorizing potential improvements or pitfalls in model training. This can allow us to explore the “yellow zone” of knowledge without immediate empirical validation, perhaps using theoretical constructs to examine sources of error and bias.</p>
+<p>Overall, while data quantity might seem like a limitation, improving data quality is indeed a multidimensional challenge that could yield significant improvements in model performance and reliability.</p>
+</Details></Details><div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
