@@ -1,10 +1,34 @@
-# outcome ~ 1 
-$Y_{ij} = \beta_{i0}+X_{ij}\beta_{ij} + \epsilon_{ij}, \quad \epsilon_{ij} \sim \mathcal{N}(\mu, \sigma^2) $
+```
+1. Physics vs. Metaphysics
+                          \
+      3. Epistemiology -> 2. Identity -> 5. Time -> 6. Change
+                          /
+                           4. Ontology
+```
 
----
+1. Concept/Reverence
+2. Modifier/Chemical
+   - Driver, activator of behavior
+4. Language/Inference:: $\text{Knowledge}=\alpha+\text{X}\beta+\epsilon$
+   - Worry
+   - Anxiety
+   - Engagement
+   - Flow
+   - Control
+   - Relaxation
+   - Boredom
+   - Apathy
+     
+5. Subject/Deliverance
+6. `Activator`/Biological
+7. Object/Sociological
 
-emotion ~ (subatomic + cosmic) + (chemical + biological) + (financial + social)
+```
+                1. Notions
+                           \
+            3. Emotions -> 2. Notions -> 5. Emotions -> 6. Motions
+                           /
+                            4. Motions
+```
 
----
 
-ordinal: positive, flow psychology
