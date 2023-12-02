@@ -9,7 +9,7 @@
 1. Concept/Reverence
 2. Modifier/Chemical
    - Driver, activator of behavior
-4. Language/Inference:: $\text{Knowledge}=\alpha+\text{X}\beta+\epsilon$
+4. [Language/Inference](https://github.com/abikesa/emotion/blob/main/mode.md):: $\text{Knowledge}=\alpha+\text{X}\beta+\epsilon$
    - Worry
    - Anxiety
    - Engagement
