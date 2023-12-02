@@ -19,6 +19,12 @@
      
 ---
 
+- Hierarchy and ranking of human emotion conditional on degree of `uncertainty`, $\Large\epsilon$
+  - Top rank: Worry
+  - Middle: Flow & Control
+  - Bottom: Apathy
+
+---
 - [The Crown S6E4](https://www.netflix.com/watch/81489585?trackId=14170286&tctx=2%2C0%2C2b7fa3f2-6447-4032-ab2e-bdc082737608-159869912%2CNES_FE6B6A4DD87939698C16E9302112A6-994911DC4F528C-0E56F792E1_p_1701538424120%2CNES_FE6B6A4DD87939698C16E9302112A6_p_1701538424120%2C%2C%2C%2C%2CVideo%3A80025678%2CminiDpPlayButton): Aftermath
 - What do people want from me?
    - Attention
