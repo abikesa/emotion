@@ -1,0 +1,13 @@
+$\text{Knowledge}=\alpha+\text{X}\beta+\epsilon$    
+   - $\alpha$
+     - Skill
+     - Tokens
+     - Known/Unknown
+   - $\beta$
+     - Challenge
+     - Tokens
+     - Known/Unkown
+   - $\epsilon$
+     - Mismatch
+     - Tokens
+     - Known/Unknown
