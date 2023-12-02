@@ -11,7 +11,7 @@
    - Driver, activator of behavior
 4. [Language/Inference](https://github.com/abikesa/emotion/blob/main/mode.md):: $\text{Knowledge}=\alpha+\text{X}\beta+\epsilon$
    - Worry
-   - Anxiety
+   - [Anxiety](https://github.com/abikesa/emotion/blob/main/genre.md)
    - Engagement
    - Flow
    - Control
