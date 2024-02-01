@@ -29,6 +29,7 @@
      - Tools
      - [Exemplars](https://www.youtube.com/watch?v=tO9s7sVTq70)
        - Here EFT is a perfect example of construct `invalidity`
+       - Tantamount to an intervention on change itself!
    - Deliverence
 6. Physical:: $\epsilon$
 7. [Labs](https://en.wikipedia.org/wiki/Emotionally_focused_therapy):: Rx
